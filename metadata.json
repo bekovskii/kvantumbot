@@ -1,0 +1,6 @@
+{
+  "name": "KvantumBot — 50 Piyasa Binance Algoritmik İşlem Terminali",
+  "description": "Binance Mainnet gerçek piyasa verileri (fiyat, OHLCV mum, L2 emir defteri) ve açıkça etiketlenmiş AI haber duyarlılığı tahminleri (AI Estimate) ile çalışan kurumsal algoritmik işlem terminali.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

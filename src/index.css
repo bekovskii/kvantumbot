@@ -1,0 +1,176 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  html,
+  body {
+    font-family: var(--font-sans);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    background-color: #090d16;
+    color: #f1f5f9;
+    overflow-anchor: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .font-mono,
+  .tabular-nums {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom Cyber-Neon Scrollbars (Hareket Çubukları) matching the AI CRYPTO BOT UI */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(34, 211, 238, 0.45) #090d16;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #090d16;
+  border-radius: 9999px;
+  border: 1px solid rgba(30, 41, 59, 0.55);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(168, 85, 247, 0.65) 0%, rgba(34, 211, 238, 0.75) 50%, rgba(16, 185, 129, 0.65) 100%);
+  border-radius: 9999px;
+  border: 1px solid rgba(34, 211, 238, 0.4);
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.35);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #a855f7 0%, #22d3ee 50%, #10b981 100%);
+  box-shadow: 0 0 14px rgba(34, 211, 238, 0.7);
+}
+
+*::-webkit-scrollbar-corner {
+  background: #090d16;
+}
+
+/* Custom Neon Range Slider (Risk Seviyesi Seçici Hareket Çubuğu) */
+input[type="range"].ai-neon-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 9999px;
+  border: 1px solid rgba(71, 85, 105, 0.65);
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="range"].ai-neon-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: #f8fafc;
+  border: 3px solid #38bdf8;
+  box-shadow: 0 0 14px rgba(34, 211, 238, 0.9), 0 0 4px rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type="range"].ai-neon-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.12);
+  box-shadow: 0 0 18px rgba(16, 185, 129, 0.95), 0 0 6px #ffffff;
+}
+
+input[type="range"].ai-neon-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: #f8fafc;
+  border: 3px solid #38bdf8;
+  box-shadow: 0 0 14px rgba(34, 211, 238, 0.9), 0 0 4px rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+}
+
+.ai-bot-shell {
+  background: radial-gradient(circle at 18% 12%, rgba(56, 189, 248, 0.08), transparent 42%),
+              radial-gradient(circle at 82% 28%, rgba(168, 85, 247, 0.08), transparent 45%),
+              linear-gradient(180deg, #0b0f19 0%, #090d16 100%);
+  overflow-anchor: none;
+}
+
+.ai-bot-sidebar {
+  background: linear-gradient(180deg, rgba(15, 22, 38, 0.96) 0%, rgba(10, 14, 26, 0.98) 100%);
+  border-right: 1px solid rgba(51, 65, 85, 0.45);
+}
+
+.ai-nav-active {
+  background: linear-gradient(90deg, rgba(14, 116, 144, 0.25) 0%, rgba(34, 211, 238, 0.35) 100%);
+  border-right: 3px solid #22d3ee;
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.18);
+}
+
+.ai-glass-card {
+  background: linear-gradient(180deg, rgba(19, 27, 46, 0.88) 0%, rgba(13, 19, 34, 0.94) 100%);
+  border: 1px solid rgba(51, 65, 85, 0.65);
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  overflow-anchor: none;
+}
+
+.ai-status-banner-active {
+  background: linear-gradient(90deg, rgba(6, 78, 59, 0.35) 0%, rgba(16, 185, 129, 0.16) 50%, rgba(6, 78, 59, 0.35) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.55);
+  box-shadow: 0 0 24px rgba(16, 185, 129, 0.18), inset 0 0 18px rgba(16, 185, 129, 0.08);
+}
+
+.ai-status-banner-paused {
+  background: linear-gradient(90deg, rgba(120, 53, 15, 0.3) 0%, rgba(245, 158, 11, 0.14) 50%, rgba(120, 53, 15, 0.3) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.5);
+}
+
+.ai-op-card-buy {
+  background: linear-gradient(90deg, rgba(6, 78, 59, 0.42) 0%, rgba(16, 185, 129, 0.12) 100%);
+  border: 1.5px solid rgba(52, 211, 153, 0.75);
+  box-shadow: 0 0 22px rgba(16, 185, 129, 0.2), inset 0 0 14px rgba(16, 185, 129, 0.08);
+}
+
+.ai-op-card-hold {
+  background: linear-gradient(90deg, rgba(113, 63, 18, 0.38) 0%, rgba(30, 58, 138, 0.25) 100%);
+  border: 1.5px solid rgba(250, 204, 21, 0.7);
+  box-shadow: 0 0 22px rgba(250, 204, 21, 0.14), inset 0 0 14px rgba(56, 189, 248, 0.08);
+}
+
+.ai-op-card-sell {
+  background: linear-gradient(90deg, rgba(131, 24, 67, 0.42) 0%, rgba(244, 63, 94, 0.14) 100%);
+  border: 1.5px solid rgba(244, 114, 182, 0.75);
+  box-shadow: 0 0 22px rgba(244, 63, 94, 0.2), inset 0 0 14px rgba(244, 63, 94, 0.08);
+}
+
+.terminal-canvas {
+  background-color: #0b0f19;
+  overflow-anchor: none;
+}
+
+.terminal-panel {
+  background-color: #111827;
+  border: 1px solid rgba(51, 65, 85, 0.65);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.65);
+  overflow-anchor: none;
+}
+
+.terminal-header-bar {
+  background: linear-gradient(90deg, rgba(19, 27, 46, 0.95) 0%, rgba(13, 19, 34, 0.95) 100%);
+  border-bottom: 1px solid rgba(51, 65, 85, 0.65);
+}
+
+.terminal-screen-inset {
+  background-color: #090d16;
+  border: 1px solid rgba(51, 65, 85, 0.6);
+  overflow-anchor: none;
+}
